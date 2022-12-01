@@ -1,7 +1,7 @@
 import React from 'react';
-import './Controls.css';
+import './Feedback.css';
 
-export const Controls = ({
+export const Feedback = ({
   onIncrementGood,
   onIncrementNeutral,
   onIncrementBad,
