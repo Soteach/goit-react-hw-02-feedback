@@ -27,6 +27,10 @@ export class Main extends Component {
     });
   };
 
+  countTotalFeedback = () => {
+    return this.state.good + this.state.neutral + this.state.bad;
+  };
+
   render() {
     return (
       <>
@@ -39,6 +43,7 @@ export class Main extends Component {
           good={this.state.good}
           neutral={this.state.neutral}
           bad={this.state.bad}
+          total={this.countTotalFeedback()}
         />
       </>
     );
