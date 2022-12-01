@@ -28,7 +28,12 @@ export class Main extends Component {
   };
 
   countTotalFeedback = () => {
-    return this.state.good + this.state.neutral + this.state.bad;
+    const { good, neutral, bad } = this.state;
+    return good + neutral + bad;
+  };
+
+  countPositiveFeedbackPercentage = () => {
+    return Number((this.state.good / this.countTotalFeedback()) * 100);
   };
 
   render() {
@@ -44,6 +49,11 @@ export class Main extends Component {
           neutral={this.state.neutral}
           bad={this.state.bad}
           total={this.countTotalFeedback()}
+          percentage={
+            !isNaN(this.countPositiveFeedbackPercentage())
+              ? this.countPositiveFeedbackPercentage()
+              : 0
+          }
         />
       </>
     );
