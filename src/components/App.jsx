@@ -1,11 +1,9 @@
-import { Feedback } from './Feedback/Feedback';
-import { Statistics } from './Statistics/Statistix';
+import { Main } from './Main/Main';
 
 export const App = () => {
   return (
     <>
-      <Feedback />
-      <Statistics />
+      <Main />
     </>
   );
 };
