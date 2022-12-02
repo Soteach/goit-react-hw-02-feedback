@@ -7,15 +7,14 @@ export const Feedback = ({
   onIncrementBad,
 }) => (
   <>
-    <h2 className="Header">Please leave feedback</h2>
     <div className="Controls">
-      <button type="submit" onClick={onIncrementGood}>
+      <button type="button" onClick={onIncrementGood}>
         Good
       </button>
-      <button type="submit" onClick={onIncrementNeutral}>
+      <button type="button" onClick={onIncrementNeutral}>
         Neutral
       </button>
-      <button type="submit" onClick={onIncrementBad}>
+      <button type="button" onClick={onIncrementBad}>
         Bad
       </button>
     </div>
