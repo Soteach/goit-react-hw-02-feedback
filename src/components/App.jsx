@@ -11,21 +11,18 @@ export class App extends Component {
     bad: 0,
   };
 
-  stateIncrementGood = () => {
+  stateIncrement = event => {
     this.setState(prevState => {
-      return { good: prevState.good + 1 };
-    });
-  };
-
-  stateIncrementNeutral = () => {
-    this.setState(prevState => {
-      return { neutral: prevState.neutral + 1 };
-    });
-  };
-
-  stateIncrementBad = () => {
-    this.setState(prevState => {
-      return { bad: prevState.bad + 1 };
+      switch (event.target.innerText) {
+        case 'Good':
+          return { good: prevState.good + 1 };
+        case 'Neutral':
+          return { neutral: prevState.neutral + 1 };
+        case 'Bad':
+          return { bad: prevState.bad + 1 };
+        default:
+          return;
+      }
     });
   };
 
@@ -42,12 +39,7 @@ export class App extends Component {
     return (
       <>
         <Section title="Feedback">
-          <Feedback
-            feedback={this.state}
-            onIncrementGood={this.stateIncrementGood}
-            onIncrementNeutral={this.stateIncrementNeutral}
-            onIncrementBad={this.stateIncrementBad}
-          />
+          <Feedback feedback={this.state} onIncrement={this.stateIncrement} />
         </Section>
         <Section title="Statistics">
           {this.countTotalFeedback() ? (

@@ -1,20 +1,16 @@
 import React from 'react';
 import './Feedback.css';
 
-export const Feedback = ({
-  onIncrementGood,
-  onIncrementNeutral,
-  onIncrementBad,
-}) => (
+export const Feedback = ({ onIncrement }) => (
   <>
     <div className="Controls">
-      <button type="button" onClick={onIncrementGood}>
+      <button type="button" onClick={onIncrement}>
         Good
       </button>
-      <button type="button" onClick={onIncrementNeutral}>
+      <button type="button" onClick={onIncrement}>
         Neutral
       </button>
-      <button type="button" onClick={onIncrementBad}>
+      <button type="button" onClick={onIncrement}>
         Bad
       </button>
     </div>
