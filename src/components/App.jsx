@@ -2,7 +2,7 @@ import { Component } from 'react';
 import { Feedback } from './Feedback/Feedback';
 import { Statistics } from '../components/Statistics/Statistix';
 import { Section } from './Section/Section';
-import 'App.css';
+import '../App.css';
 
 export class App extends Component {
   state = {
